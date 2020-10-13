@@ -1,0 +1,26 @@
+{% extends 'logP/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+    change_password
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Change Password</h4>
+                        <form method="post">
+                            {% csrf_token %}
+                            {{ form|crispy }}
+                            <br>
+                            <button type="submit" class="btn btn-success">
+                                Change Password
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
